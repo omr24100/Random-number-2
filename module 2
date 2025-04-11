@@ -1,0 +1,7 @@
+// GuessingGame.h
+#ifndef GUESSINGGAME_H
+#define GUESSINGGAME_H
+
+void playGuessingGame();  // Starts the guessing game
+
+#endif
