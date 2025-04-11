@@ -9,25 +9,26 @@ to high display "To high, try again" and when the number is guessed to low displ
 "Too low, try again."
 */
 
+
+// GuessingGame.cpp
 #include <iostream>
-#include <cstdlib>  
-#include <ctime>    
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
 int main() {
+    srand(static_cast<unsigned int>(time(0)));  // Seed the random number generator
 
-    srand(static_cast<unsigned int>(time(0)));
-
-
-    int secretNumber = rand() % 100 + 1;
+    int secretNumber = rand() % 100 + 1;  // Generate a random number between 1 and 100
     int guess;
+    int guessCount = 0;  // Variable to keep track of the number of guesses
 
     cout << "Guess the number (between 1 and 100): ";
 
-
     do {
         cin >> guess;
+        guessCount++;  // Increment the guess counter on each guess
 
         if (guess > secretNumber) {
             cout << "Too high, try again: ";
@@ -36,10 +37,11 @@ int main() {
             cout << "Too low, try again: ";
         }
         else {
-            cout << "Congratulations! You guessed the number!" << endl;
+            // When the user guesses correctly, display the number of guesses
+            cout << " Congratulations! You guessed the number in " << guessCount << " attempt(s)!" << endl;
         }
 
-    } while (guess != secretNumber);
+    } while (guess != secretNumber);  // Continue until the user guesses the number correctly
 
     return 0;
 }
