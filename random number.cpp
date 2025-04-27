@@ -18,17 +18,17 @@ to high display "To high, try again" and when the number is guessed to low displ
 using namespace std;
 
 int main() {
-    srand(static_cast<unsigned int>(time(0)));  // Seed the random number generator
+    srand(static_cast<unsigned int>(time(0)));  
 
-    int secretNumber = rand() % 100 + 1;  // Generate a random number between 1 and 100
+    int secretNumber = rand() % 100 + 1;  
     int guess;
-    int guessCount = 0;  // Variable to keep track of the number of guesses
+    int guessCount = 0;  
 
     cout << "Guess the number (between 1 and 100): ";
 
     do {
         cin >> guess;
-        guessCount++;  // Increment the guess counter on each guess
+        guessCount++;  
 
         if (guess > secretNumber) {
             cout << "Too high, try again: ";
@@ -41,7 +41,7 @@ int main() {
             cout << " Congratulations! You guessed the number in " << guessCount << " attempt(s)!" << endl;
         }
 
-    } while (guess != secretNumber);  // Continue until the user guesses the number correctly
+    } while (guess != secretNumber);  
 
     return 0;
 }
